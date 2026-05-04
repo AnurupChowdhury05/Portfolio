@@ -142,7 +142,7 @@ const Hero = () => {
           <div className="avatar-ring ring-2"></div>
           <div className="avatar-ring ring-3"></div>
           <div className="avatar-orb">
-            <img src="/avatar.jpg" alt="Developer Avatar" className="avatar-img" />
+            <img src={`${import.meta.env.BASE_URL}avatar.jpg`} alt="Developer Avatar" className="avatar-img" />
             <div className="avatar-scan"></div>
           </div>
           <div className="avatar-data">

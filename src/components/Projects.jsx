@@ -15,7 +15,7 @@ const Projects = () => {
         <div className="project-card glass-card featured reveal" id="project-friday">
           <div className="project-badge">FEATURED</div>
           <div className="project-preview">
-            <img src="/projects/friday-assistant.png" alt="F.R.I.D.A.Y. AI Assistant" className="project-img" />
+            <img src={`${import.meta.env.BASE_URL}projects/friday-assistant.png`} alt="F.R.I.D.A.Y. AI Assistant" className="project-img" />
           </div>
           <div className="project-body">
             <div className="project-top">
@@ -49,7 +49,7 @@ const Projects = () => {
         {/* AI Workflow Builder */}
         <div className="project-card glass-card reveal" id="project-workflow">
           <div className="project-preview">
-            <img src="/projects/workflow-builder.png" alt="AI Workflow Builder" className="project-img" />
+            <img src={`${import.meta.env.BASE_URL}projects/workflow-builder.png`} alt="AI Workflow Builder" className="project-img" />
           </div>
           <h3 className="project-title">AI Workflow Builder</h3>
           <p className="project-desc">
@@ -67,7 +67,7 @@ const Projects = () => {
         {/* AI Interview Simulator */}
         <div className="project-card glass-card reveal" id="project-interview">
           <div className="project-preview">
-            <img src="/projects/interview-simulator.png" alt="AI Interview Simulator" className="project-img" />
+            <img src={`${import.meta.env.BASE_URL}projects/interview-simulator.png`} alt="AI Interview Simulator" className="project-img" />
           </div>
           <h3 className="project-title">AI Interview Simulator</h3>
           <p className="project-desc">
@@ -85,7 +85,7 @@ const Projects = () => {
         {/* Sign Language Translator */}
         <div className="project-card glass-card reveal" id="project-signlang">
           <div className="project-preview">
-            <img src="/projects/sign-language.png" alt="Sign Language Translator" className="project-img" />
+            <img src={`${import.meta.env.BASE_URL}projects/sign-language.png`} alt="Sign Language Translator" className="project-img" />
           </div>
           <h3 className="project-title">Sign Language Translator</h3>
           <p className="project-desc">
@@ -103,7 +103,7 @@ const Projects = () => {
         {/* Fingerprint Voting System */}
         <div className="project-card glass-card reveal" id="project-voting">
           <div className="project-preview">
-            <img src="/projects/fingerprint-voting.png" alt="Fingerprint Voting System" className="project-img" />
+            <img src={`${import.meta.env.BASE_URL}projects/fingerprint-voting.png`} alt="Fingerprint Voting System" className="project-img" />
           </div>
           <h3 className="project-title">Fingerprint Voting System</h3>
           <p className="project-desc">

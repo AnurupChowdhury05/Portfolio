@@ -1413,4 +1413,47 @@ a {
     gap: 1.5rem;
     text-align: center;
   }
+
+  /* Fix for all containers/div z-index on phone like devices */
+  .section, 
+  .glass-card, 
+  .hero-content, 
+  .hero-visual,
+  .about-grid > div,
+  .skills-panel > div,
+  .project-card,
+  .contact-form,
+  .contact-links {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Ensure navigation stays above the container fixes */
+  .navbar {
+    z-index: 1000;
+  }
+  .menu-toggle {
+    z-index: 1001;
+    position: relative;
+  }
+  .mobile-menu {
+    z-index: 999;
+    background: var(--bg-darker);
+    width: 100%;
+  }
+  
+  .nav-logo {
+    z-index: 1;
+    position: relative;
+  }
+
+  /* Hide data nodes on mobile to prevent overflow */
+  .data-node {
+    display: none !important;
+  }
+  
+  /* Hide custom cursor on mobile devices */
+  .cursor, .cursor-trail {
+    display: none !important;
+  }
 }

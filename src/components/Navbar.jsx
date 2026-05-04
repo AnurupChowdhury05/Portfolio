@@ -65,23 +65,23 @@ const Navbar = () => {
           <span style={isMenuOpen ? { opacity: 0 } : {}}></span>
           <span style={isMenuOpen ? { transform: 'rotate(-45deg) translate(5px, -5px)' } : {}}></span>
         </button>
-      </nav>
 
-      <div id="mobile-menu" className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-        <ul>
-          {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
-            <li key={section}>
-              <a 
-                href={`#${section}`} 
-                className="mobile-link"
-                onClick={toggleMenu}
-              >
-                {section.toUpperCase()}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div id="mobile-menu" className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
+          <ul>
+            {['home', 'about', 'skills', 'projects', 'contact'].map((section) => (
+              <li key={section}>
+                <a 
+                  href={`#${section}`} 
+                  className="mobile-link"
+                  onClick={toggleMenu}
+                >
+                  {section.toUpperCase()}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
     </>
   );
 };

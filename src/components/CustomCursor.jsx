@@ -51,6 +51,39 @@ const CustomCursor = () => {
         cursor.style.display = 'none';
         cursorTrail.style.display = 'none';
       }
+
+      // Mobile Touch Animation Logic
+      const handleTouch = (e) => {
+        // e.touches exists on touchstart, e.clientX exists on click
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        const dot = document.createElement('div');
+        dot.className = 'touch-ripple-dot';
+        dot.style.left = clientX + 'px';
+        dot.style.top = clientY + 'px';
+
+        const ring = document.createElement('div');
+        ring.className = 'touch-ripple-ring';
+        ring.style.left = clientX + 'px';
+        ring.style.top = clientY + 'px';
+
+        document.body.appendChild(dot);
+        document.body.appendChild(ring);
+
+        // Clean up DOM after animation completes
+        setTimeout(() => {
+          dot.remove();
+          ring.remove();
+        }, 600);
+      };
+
+      document.addEventListener('touchstart', handleTouch);
+      // document.addEventListener('click', handleTouch); // Optional, but touchstart gives instant mobile feedback
+
+      return () => {
+        document.removeEventListener('touchstart', handleTouch);
+      };
     }
   }, []);
 

@@ -1336,6 +1336,43 @@ a {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes touch-dot {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
+@keyframes touch-ring {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; border-color: var(--primary-purple); }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; border-color: var(--primary-cyan); }
+}
+
+/* Touch Animations Classes */
+.touch-ripple-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--primary-cyan), 0 0 20px var(--primary-cyan);
+  animation: touch-dot 0.5s ease-out forwards;
+}
+
+.touch-ripple-ring {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary-purple);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: 0 0 10px var(--primary-purple-dim) inset;
+  animation: touch-ring 0.6s ease-out forwards;
+}
+
 /* Reveal classes for intersection observer */
 .reveal {
   opacity: 0;

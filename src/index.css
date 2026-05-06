@@ -1862,6 +1862,31 @@ body.override-mode .flashlight-overlay {
     padding: 0.8rem;
   }
 
+  .glass-card {
+    padding: 1.5rem;
+  }
+
+  .contact-form.glass-card {
+    padding: 1.5rem;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .resume-header h2 {
+    font-size: 1.5rem;
+    word-break: break-word;
+    max-width: 85%;
+  }
+
+  .modal-content {
+    padding: 25px 20px;
+    margin: 10px;
+  }
+
   .section {
     padding: 60px 5%;
   }

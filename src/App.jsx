@@ -10,12 +10,47 @@ import CustomCursor from './components/CustomCursor';
 import ParticleCanvas from './components/ParticleCanvas';
 import BootScreen from './components/BootScreen';
 import ResumeModal from './components/ResumeModal';
+import VoiceNavigation from './components/VoiceNavigation';
 
 function App() {
   const [isBooting, setIsBooting] = useState(true);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isOverrideMode, setIsOverrideMode] = useState(false);
 
   useEffect(() => {
+    // --- HUD ENHANCEMENTS ---
+    const handleMouseMove = (e) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    let secretBuffer = '';
+    const secretCode = 'friday';
+    const handleKeyDown = (e) => {
+      secretBuffer += e.key.toLowerCase();
+      if (secretBuffer.length > secretCode.length) {
+        secretBuffer = secretBuffer.slice(-secretCode.length);
+      }
+      if (secretBuffer === secretCode) {
+        setIsOverrideMode(prev => !prev);
+        // Play alert sound if user triggers override
+        import('./utils/sounds').then(({ playAlertSound }) => {
+          if(playAlertSound) playAlertSound();
+        }).catch(() => {});
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    const glitchInterval = setInterval(() => {
+      const glitchTargets = document.querySelectorAll('.hero-name, .section-title, .project-title');
+      if (glitchTargets.length > 0) {
+        const randomTarget = glitchTargets[Math.floor(Math.random() * glitchTargets.length)];
+        randomTarget.classList.add('glitch-anim');
+        setTimeout(() => randomTarget.classList.remove('glitch-anim'), 500);
+      }
+    }, 8000);
+
     // --- SCROLL REVEAL (INTERSECTION OBSERVER) ---
     const revealElements = document.querySelectorAll('.reveal');
     
@@ -44,12 +79,27 @@ function App() {
 
     return () => {
       revealObserver.disconnect();
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('keydown', handleKeyDown);
+      clearInterval(glitchInterval);
     };
   }, []);
+
+  useEffect(() => {
+    if (isOverrideMode) {
+      document.body.classList.add('override-mode');
+    } else {
+      document.body.classList.remove('override-mode');
+    }
+  }, [isOverrideMode]);
 
   return (
     <>
       {isBooting && <BootScreen onComplete={() => setIsBooting(false)} />}
+      <div className="flashlight-overlay"></div>
+      <div className="scanlines"></div>
+      <div className="vignette"></div>
+      
       <CustomCursor />
       <ParticleCanvas />
       <div className="grid-overlay"></div>
@@ -67,6 +117,7 @@ function App() {
       </main>
       
       <Footer />
+      <VoiceNavigation />
     </>
   );
 }

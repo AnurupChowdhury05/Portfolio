@@ -85,3 +85,30 @@ export const playBootSound = () => {
     osc.stop(ctx.currentTime + 1.0);
   } catch(e) {}
 };
+
+export const playAlertSound = () => {
+  try {
+    const ctx = initAudio();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    
+    // Alarming siren sound
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(400, ctx.currentTime);
+    osc.frequency.linearRampToValueAtTime(800, ctx.currentTime + 0.3);
+    osc.frequency.linearRampToValueAtTime(400, ctx.currentTime + 0.6);
+    osc.frequency.linearRampToValueAtTime(800, ctx.currentTime + 0.9);
+    osc.frequency.linearRampToValueAtTime(400, ctx.currentTime + 1.2);
+    
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.1);
+    gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 1.1);
+    gain.gain.linearRampToValueAtTime(0.001, ctx.currentTime + 1.2);
+    
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    
+    osc.start();
+    osc.stop(ctx.currentTime + 1.2);
+  } catch(e) {}
+};

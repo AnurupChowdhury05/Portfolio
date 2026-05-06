@@ -1861,13 +1861,23 @@ body.override-mode .flashlight-overlay {
   }
 
   .contact-link-val {
+    word-break: break-all;
+    font-size: 0.85rem;
+  }
+
+  .contact-heading {
+    font-size: clamp(2rem, 8vw, 2.5rem);
     word-break: break-word;
-    font-size: 0.9rem;
   }
 
   .contact-link {
     gap: 1rem;
     padding: 0.8rem;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+    word-break: break-word;
   }
 
   .glass-card {
@@ -1912,12 +1922,14 @@ body.override-mode .flashlight-overlay {
   }
 
   /* Fix grid overflows on mobile */
-  .about-card-stack {
+  .about-card-stack, .projects-grid, .contact-grid, .skills-panel {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .about-card-stack > *, .projects-grid > *, .contact-grid > *, .skills-panel > * {
+    min-width: 0;
   }
 
   /* Fix for all containers/div z-index on phone like devices */

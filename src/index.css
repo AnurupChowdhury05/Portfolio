@@ -1680,7 +1680,7 @@ a {
 /* === ALL PROJECTS MODAL === */
 .all-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -1725,12 +1725,14 @@ a {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: var(--text-main);
+  word-break: break-word;
 }
 
 .all-project-info p {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.5;
+  word-break: break-word;
 }
 
 /* === ADVANCED HUD ENHANCEMENTS === */

@@ -19,7 +19,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <h3>[EDUCATION]</h3>
             <div className="resume-item">
               <h4>B.Tech in Computer Science</h4>
-              <span className="resume-date">2020 - 2024</span>
+              <span className="resume-date">2023 - 2027</span>
               <p>Specialization in Data Structures, Algorithms, and System Design. Developed real-time Sign Language Translators using Computer Vision and Deep Learning.</p>
             </div>
           </div>

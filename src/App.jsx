@@ -63,7 +63,6 @@ function App() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // If it's a skill bar, trigger the level fill
           if (entry.target.classList.contains('skill-bar')) {
             const fill = entry.target.querySelector('.skill-fill');
             if (fill) fill.style.width = entry.target.getAttribute('data-level') + '%';
@@ -77,10 +76,22 @@ function App() {
       revealObserver.observe(el);
     });
 
+    // --- DYNAMIC TAB TITLE ---
+    const originalTitle = document.title;
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        document.title = "⚠️ CONNECTION LOST...";
+      } else {
+        document.title = originalTitle;
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
     return () => {
       revealObserver.disconnect();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       clearInterval(glitchInterval);
     };
   }, []);

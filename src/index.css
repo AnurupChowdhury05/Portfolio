@@ -1677,6 +1677,62 @@ a {
   font-size: 0.9rem;
 }
 
+/* === ALL PROJECTS MODAL === */
+.all-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.all-project-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.all-project-card:hover {
+  border-color: var(--primary-cyan);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 240, 255, 0.1);
+}
+
+.all-project-img-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.all-project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.all-project-card:hover .all-project-img {
+  transform: scale(1.05);
+}
+
+.all-project-info {
+  padding: 1.5rem;
+}
+
+.all-project-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.all-project-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* === ADVANCED HUD ENHANCEMENTS === */
 
 .flashlight-overlay {

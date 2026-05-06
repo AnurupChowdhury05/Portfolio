@@ -11,7 +11,7 @@ const TiltCard = ({ children, className, id }) => {
   );
 };
 
-const Projects = () => {
+const Projects = ({ onOpenAllProjects }) => {
   return (
     <section id="projects" className="projects section">
       <div className="section-header">
@@ -160,7 +160,10 @@ const Projects = () => {
       </div>
 
       <div className="projects-cta">
-        <a href="#" className="btn btn-secondary" id="all-projects-btn">VIEW ALL PROJECTS →</a>
+        <a href="#projects" className="btn btn-secondary" id="all-projects-btn" onClick={(e) => {
+          e.preventDefault();
+          onOpenAllProjects();
+        }}>VIEW ALL PROJECTS →</a>
       </div>
     </section>
   );

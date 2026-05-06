@@ -11,10 +11,12 @@ import ParticleCanvas from './components/ParticleCanvas';
 import BootScreen from './components/BootScreen';
 import ResumeModal from './components/ResumeModal';
 import VoiceNavigation from './components/VoiceNavigation';
+import AllProjectsModal from './components/AllProjectsModal';
 
 function App() {
   const [isBooting, setIsBooting] = useState(true);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isAllProjectsOpen, setIsAllProjectsOpen] = useState(false);
   const [isOverrideMode, setIsOverrideMode] = useState(false);
 
   useEffect(() => {
@@ -116,6 +118,7 @@ function App() {
       <div className="grid-overlay"></div>
       
       <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
+      <AllProjectsModal isOpen={isAllProjectsOpen} onClose={() => setIsAllProjectsOpen(false)} />
       
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
       
@@ -123,7 +126,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
-        <Projects />
+        <Projects onOpenAllProjects={() => setIsAllProjectsOpen(true)} />
         <Contact />
       </main>
       

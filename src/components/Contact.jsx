@@ -51,11 +51,11 @@ const Contact = () => {
             I'm always open. Drop a message and I'll respond within 24 hours.
           </p>
           <div className="contact-links">
-            <a href="mailto:ruprag05@gmail.com" className="contact-link" id="contact-email">
+            <a href="mailto:anurupchowdhury05@gmail.com" className="contact-link" id="contact-email">
               <div className="contact-link-icon">✉️</div>
               <div>
                 <div className="contact-link-label">EMAIL</div>
-                <div className="contact-link-val">ruprag05@gmail.com</div>
+                <div className="contact-link-val">anurupchowdhury05@gmail.com</div>
               </div>
             </a>
             <a href="https://github.com/AnurupChowdhury05" target="_blank" rel="noreferrer" className="contact-link" id="contact-github">
@@ -77,7 +77,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact-form glass-card reveal" id="contact-form" action="https://formsubmit.co/ruprag05@gmail.com" method="POST" onSubmit={handleSubmit}>
+        <form className="contact-form glass-card reveal" id="contact-form" action="https://formsubmit.co/anurupchowdhury05@gmail.com" method="POST" onSubmit={handleSubmit}>
           <input type="hidden" name="_subject" value="New Portfolio Message!" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />

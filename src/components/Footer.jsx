@@ -11,7 +11,7 @@ const Footer = () => {
         </div>
         <p className="footer-copy">© 2026 Anurup Chowdhury · Designed & Built with ☕ and 💻</p>
         <div className="footer-socials">
-          <a href="https://github.com/AnurupChowdhury05" target="_blank" rel="noreferrer" className="social-btn" aria-label="GitHub" id="footer-github">GH</a>
+          <a href="https://github.com/anurupxdev" target="_blank" rel="noreferrer" className="social-btn" aria-label="GitHub" id="footer-github">GH</a>
           <a href="https://www.linkedin.com/in/anurup-chowdhury-402852279/" target="_blank" rel="noreferrer" className="social-btn" aria-label="LinkedIn" id="footer-linkedin">LI</a>
         </div>
       </div>

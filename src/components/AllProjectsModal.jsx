@@ -10,35 +10,35 @@ const AllProjectsModal = ({ isOpen, onClose }) => {
       title: "F.R.I.D.A.Y. AI Assistant",
       desc: "Iron Man-inspired agentic AI assistant with LangGraph multi-agent orchestration, real-time SSE streaming, and a cinematic HUD interface.",
       image: "projects/friday-assistant.png",
-      github: "https://github.com/AnurupChowdhury05"
+      github: "https://github.com/anurupxdev"
     },
     {
       id: 2,
       title: "AI Workflow Builder",
       desc: "Enterprise-grade visual AI orchestration platform with DAG-based execution engine and AI Copilot.",
       image: "projects/workflow-builder.png",
-      github: "https://github.com/AnurupChowdhury05"
+      github: "https://github.com/anurupxdev"
     },
     {
       id: 3,
       title: "AI Interview Simulator",
       desc: "FAANG-level AI interview platform with system design whiteboard, AST-based code profiling, and resume RAG.",
       image: "projects/interview-simulator.png",
-      github: "https://github.com/AnurupChowdhury05"
+      github: "https://github.com/anurupxdev"
     },
     {
       id: 4,
       title: "Sign Language Translator",
       desc: "Real-time sign language recognition system using computer vision and deep learning.",
       image: "projects/sign-language.png",
-      github: "https://github.com/AnurupChowdhury05"
+      github: "https://github.com/anurupxdev"
     },
     {
       id: 5,
       title: "Fingerprint Voting System",
       desc: "Secure biometric voting platform with fingerprint authentication and tamper-proof ballot submission.",
       image: "projects/fingerprint-voting.png",
-      github: "https://github.com/AnurupChowdhury05"
+      github: "https://github.com/anurupxdev"
     }
   ];
 

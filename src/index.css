@@ -1065,6 +1065,8 @@ a {
 .project-links {
   display: flex;
   gap: 1rem;
+  position: relative;
+  z-index: 10;
 }
 
 .proj-link {
@@ -1076,6 +1078,11 @@ a {
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+  text-decoration: none;
 }
 
 .proj-link svg {
@@ -1083,6 +1090,7 @@ a {
   height: 20px;
   color: var(--text-main);
   transition: 0.3s;
+  pointer-events: none;
 }
 
 .proj-link:hover {
